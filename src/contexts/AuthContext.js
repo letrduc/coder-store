@@ -83,6 +83,7 @@ function AuthProvider({ children }) {
 
   const logout = async (callback) => {
     window.localStorage.removeItem("username");
+    // khi user reload thì vẫn logout
     dispatch({ type: LOGOUT });
     callback();
   };

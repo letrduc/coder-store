@@ -25,6 +25,9 @@ function DetailPage() {
   const [error, setError] = useState("");
   const params = useParams();
 
+  // useEffect dùng để load dữ liệu từ api
+  // params là id
+
   useEffect(() => {
     if (params.id) {
       const getProduct = async () => {

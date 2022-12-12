@@ -28,7 +28,6 @@ function HomePage() {
   const { watch, reset } = methods;
   const filters = watch();
   const filterProducts = applyFilter(products, filters);
-
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
@@ -44,7 +43,6 @@ function HomePage() {
     };
     getProducts();
   }, []);
-
   return (
     <Container sx={{ display: "flex", minHeight: "100vh", mt: 3 }}>
       <Stack>
@@ -100,9 +98,9 @@ function applyFilter(products, filters) {
   if (sortBy === "priceAsc") {
     filteredProducts = orderBy(products, ["price"], ["asc"]);
   }
-
+  //   console.log("data:",filters.gender)
   // FILTER PRODUCTS
-  if (filters.gender.length > 0) {
+  if (filters.gender?.length > 0) {
     filteredProducts = products.filter((product) =>
       filters.gender.includes(product.gender)
     );
